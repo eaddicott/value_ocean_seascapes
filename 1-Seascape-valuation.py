@@ -14,7 +14,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from lib.capn import *
 
-plt.style.use('seaborn-whitegrid')
+#plt.style.use('seaborn-whitegrid')
 
 # ----------------------------------------------------
 ## parameters from Fenichel & Abbott (2014)
@@ -128,13 +128,10 @@ for year_ in range(2010, 2019):
   # dat = dat.assign(k = dat['k']*5)
   param = dat.reset_index(drop=True).copy()
   param['r'] = 0.201
-  # param['alpha'] = 0.5436459179063678         # tech parameter
-  # param['alpha'] = 0.2         # tech parameter
-  param['alpha'] = 0.84         # tech parameter
-  param['gamma'] = 0.74                   # pre-ITQ management parameter
-  # param['y'] = 0.15745573410462155            # system equivalence parameter
-  param['y'] = 0.00514            # system equivalence parameter
-  param['delta'] = 0.03                       # discount rate
+  param['alpha'] = 0.74         # tech parameter
+  param['gamma'] = 2.69                   # pre-ITQ management parameter
+  param['y'] = 2.248511e-12            # system equivalence parameter
+  param['delta'] = 0.02                       # discount rate
   param['order'] = 50                         # Cheby polynomial order
   param['upperK'] = param['k']*1.01                # upper K
   param['lowerK'] = param['k']*0.01           # lower K
